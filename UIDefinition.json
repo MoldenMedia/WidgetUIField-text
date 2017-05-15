@@ -1,0 +1,20 @@
+
+{
+	"model": {
+		"fields": [{
+            "id": "theTextField",
+            "type": "text",
+            "title": "Text",
+            "defaultValue": "Enter text into this line..."
+		}],
+        "groups" : [
+            {
+                "id" : "theWidgetUIFields",
+                "title": "Widget UI Fields",
+                "width": "500",
+                "toolTip": "toolTip for Widget UI Fields",
+                "childIds": ["theTextField"]
+            }
+        ]
+	}
+}

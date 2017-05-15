@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<style>
+			/* Default widget style to make output match the bouding box */
+			html, body {
+				background: none;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+			}
+
+			/* Add your custom styles here */
+
+		</style>
+	</head>
+
+	<body style="background-color:lightgrey">
+	
+	<!-- Your custom html goes here -->
+
+	<!-- add a brief descripiton of the widget here -->
+
+	<h1 style="font-family:verdana; font-size:190%;">WIDGET TUTORIAL: Widget UI Field - "text"</h1>
+	<p style="font-family:courier; font-size:150%;">this widget descibes the usage of the widget UI field "text"</p>
+
+	<p style="font-family:courier; font-size:150%;"><b>Example</b> (you can copy and paste the following json into your UI definitions):</p>
+	<ul style="font-family:courier; font-size:150%;list-style-type:none;">
+		<li>{</li>
+        	<ul style="list-style-type:none">
+        		<li>"id": "theTextField",</li>
+ 	       	    <li>"type": "text",</li>
+   	       	    <li>"title": "Text",</li>
+    	        <li>"defaultValue": "Enter text into this line..."</li>
+        	</ul>
+		<li>}</li>
+	</ul>
+
+	<p style="font-family:courier; font-size:150%;"><b>Description of fields:</b></p>
+	<ul style="font-family:courier; font-size:150%;list-style-type:none;">
+		<li>{</li>
+        	<ul style="list-style-type:none">
+        		<li>"id"............: id of the UI field</li>
+ 	       	    <li>"type"..........: set to "text" to add a UI text field</li>
+   	       	    <li>"title".........: name of the UI field</li>
+    	        <li>"defaultValue"..: default value for the UI field when adding the widget to a compositions</li>
+        	</ul>
+		<li>}</li>
+	</ul>
+
+	<!-- Singular Widget Library -->
+	<script src="https://app.singular.live/libs/singularwidget/1.0.2/singularwidget.js"></script>
+	<script>
+		SingularWidget.init({
+		  onInit: onSingularInit,
+		  onValue: onSingularValue,
+		  onButtonClicked: onSingularButtonClicked
+		});
+	
+		function onSingularInit() {
+			console.log("onSingularInit"); 
+		}
+		
+		function onSingularValue(json) {
+			console.log("onSingularValue", json);
+		}
+
+		function onSingularButtonClicked(action) {
+			console.log("onSingularButtonClicked", action); 
+
+			/**
+			 * EXAMPLE: Send messages to the editor console
+			 * Message types: info, warning and error
+			 */
+			SingularWidget.log.info({
+				title: 'My Widget',
+				description: 'Hello Singular!'
+			});
+		}
+
+  </script>
+</body>
+</html>
